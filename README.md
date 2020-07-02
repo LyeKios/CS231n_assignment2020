@@ -3,14 +3,14 @@ CS231n: Convolutional Neural Networks for Visual Recognition.
 
 # 用做笔记 知识点&小记录
 
-2020.7.1 
-    Lecture-1
-        计算机视觉概述，历史背景
-    Lecture-2
-        K近邻，线性分类I
-        L1 distance:曼哈顿距离（对应点绝对值差之和）     适用于明确含义值
+## 2020.7.1 
+    ### Lecture-1
+        * 计算机视觉概述，历史背景
+    ### Lecture-2
+        * K近邻，线性分类I
+        * L1 distance:曼哈顿距离（对应点绝对值差之和）     适用于明确含义值
         L2 distance:D2(I1,I2)=sqr(sum((i1-i2)**2))     适用于几何距离
-    Lecture-3
+    ### Lecture-3
         线性分类II，高级表示，图像特征优化，随机梯度下降
         支持向量机：铰链损失函数Multi-SVM Loss:分类错误的指标与正确得分差值，与0的较大者累加 L=sum（max（0，sj-si+1))   当正确类别分数较高且显著时，
             这个损失函数会趋于0，是一个校验损失函数，惩罚分类易混淆的类得分。
@@ -27,8 +27,8 @@ CS231n: Convolutional Neural Networks for Visual Recognition.
         特征工程：提取图片特征，用新的高维向量代替图片用来进行分类训练，提高分类效率和效果。由卷积神经网络完成这部分工作，卷积核决定的特征提取。
             优势：特征表达性更好、运算量得以减少、语义特征得到更大重视。
         特征包括：颜色通道、直方图特征、BoW、等
-2020.7.2
-    Lecture-4
+## 2020.7.2
+    ### Lecture-4
         传统视觉方法：HOG、SIFT等特征提取
         深度学习方法：大数据支持下的端到端自提取特征
         全连接神经网络FCN多层感知机MLP
