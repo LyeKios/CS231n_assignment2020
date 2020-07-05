@@ -49,4 +49,3 @@ CS231n: Convolutional Neural Networks for Visual Recognition.
     Output_Size = （N + 2P -F )/S + 1
     1*1 conv的作用：1、降维或升维 2、跨通道信息交融 3、减少参数量 4、增加模型深度，提高非线性表示能力
     趋势：卷积核减小（运算量），深度加深（更好表达提取特征）
-    1
