@@ -49,3 +49,42 @@ CS231n: Convolutional Neural Networks for Visual Recognition.
     Output_Size = （N + 2P -F )/S + 1
     1*1 conv的作用：1、降维或升维 2、跨通道信息交融 3、减少参数量 4、增加模型深度，提高非线性表示能力
     趋势：卷积核减小（运算量），深度加深（更好表达提取特征）
+## 2020.7.5
+### Lecture-6
+    #可视化CNN为什么work
+    普通反向传播：常规回传梯度；  导向反向传播：激活值与梯度都为正才会回传梯度
+### Lecture-7
+    开始训练网络。
+    固定参数与结构设计：激活函数、网络结构
+    数据预处理：减少计算量，增加可表达性
+    权重初始化：避免初始化为同一参数，
+    Xavier初始化：'w = np.random.randn(Din, Dout) / np.sqrt(Din) '维度越多，初始化幅度值越小--标准正态分布
+    Kaiming初始化：'w = np.random.randn(Din, Dout) / np.sqrt(2 / Din) '
+    BN Batch_Normalization：   --防止过拟合，加快收敛速度
+        一个batch中有N个数据，每个数据D维；
+        1、求出每个特征维度的均值得到D个均值U_i 
+        2、求出每一个特征维度的方差得到D个方差Delta_i
+        3、对batch中每一个数据进行BN 得到X(i,j)   --shape(N*D)
+        4、Output = Gama * X(i,j) + Beta   --shape(N*D)
+        When Test:全体均值代替mini-batch均值，全体方差代替mini-batch方差
+## 2020.7.7
+### Lecture-7
+    Optimizers 梯度下降优化器、LR Schedules 学习率下降策略、Regularization 正则化、Dropout、Hyperparameters 超参数选择
+    Optimizers 梯度下降优化器：
+        SGD x = - LR * dx
+        Momentum  X+1 = - LR * (belta * X +dx)  起到梯度平滑的作用，避免过大震荡
+        AdaGrad x = - LR * dx / (np.sqrt(dx * dx) + 1e-7)  常数项避免分母为零， ---惩罚过大斜率  np.sqrt-求和开根号
+    学习率选择：
+        学习率函数下降方法
+    防止过拟合：
+        多个模型好而不同，Regularization 正则化、Dropout
+    DropOut:
+        简化理解为多个结构不同的2的N次方个模型集成，且之间权重共享
+        训练时间加大，因为掐死一部分后完成整体训练需要更多轮次
+    数据增强：
+        旋转、裁剪、遮掩、拉伸、模糊、颜色变换
+    超参数选择：
+        机器算法智能选择
+
+
+
